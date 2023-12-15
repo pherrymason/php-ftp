@@ -1,5 +1,5 @@
 {
-    "name": "rumd3x/php-ftp",
+    "name": "raulferras/php-ftp",
     "description": "A Nice and easy to use PHP utility for handling Files over FTP.",
     "license": "MIT",
     "keywords": [
@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.5",
         "ext-mbstring": "*",
-        "nesbot/carbon": "^1.33",
+        "nesbot/carbon": "^2.72",
         "rumd3x/php-baseobject": "*"
     },
     "autoload": {
