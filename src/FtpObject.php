@@ -1,7 +1,6 @@
 <?php
 namespace Rumd3x\Ftp;
 
-use Carbon\Carbon;
 use Rumd3x\BaseObject\BaseObject;
 
 abstract class FtpObject extends BaseObject {
@@ -15,7 +14,7 @@ abstract class FtpObject extends BaseObject {
 
     public function __construct(Ftp $ftp, $name = NULL) {
         $this->setFtp($ftp);
-        $this->timestamp = Carbon::now();
+        $this->timestamp = new \DateTimeImmutable();
         if (!empty($name)) $this->name = $name;
         if (!empty($name)) $this->full_name = $this->ftp->currentFolder()."/".$name;
     }

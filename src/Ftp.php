@@ -3,7 +3,6 @@ namespace Rumd3x\Ftp;
 
 use StdClass;
 use Exception;
-use Carbon\Carbon;
 
 use Rumd3x\BaseObject\BaseObject;
 
@@ -200,7 +199,7 @@ class Ftp extends BaseObject {
             $this_file->size = $fileinfo['size'];
             $this_file->setFtp($this);
             $timestamp = ftp_mdtm($this->getStream(), $this_file->name);
-            $this_file->timestamp = Carbon::createFromTimestamp($timestamp);
+            $this_file->timestamp = (new DateTime())->setTimestamp($timestamp);
             $files[] = $this_file;
         }
         return $files;
@@ -222,7 +221,7 @@ class Ftp extends BaseObject {
             $this_dir->owner = $dirinfo['owner'];
             $this_dir->group = $dirinfo['group'];
             $timestamp = ftp_mdtm($this->getStream(), $this_dir->name);
-            $this_dir->timestamp = Carbon::createFromTimestamp($timestamp);
+            $this_dir->timestamp = (new DateTime())->setTimestamp($timestamp);
             $this_dir->setFtp($this);
             $dirs[] = $this_dir;
         }

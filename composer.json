@@ -14,7 +14,6 @@
     "require": {
         "php": ">=5.5",
         "ext-mbstring": "*",
-        "nesbot/carbon": "^2.72",
         "rumd3x/php-baseobject": "*"
     },
     "autoload": {
