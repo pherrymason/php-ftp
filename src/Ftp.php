@@ -199,7 +199,7 @@ class Ftp extends BaseObject {
             $this_file->size = $fileinfo['size'];
             $this_file->setFtp($this);
             $timestamp = ftp_mdtm($this->getStream(), $this_file->name);
-            $this_file->timestamp = (new DateTime())->setTimestamp($timestamp);
+            $this_file->timestamp = (new DateTimeImmutable())->setTimestamp($timestamp);
             $files[] = $this_file;
         }
         return $files;
@@ -221,7 +221,7 @@ class Ftp extends BaseObject {
             $this_dir->owner = $dirinfo['owner'];
             $this_dir->group = $dirinfo['group'];
             $timestamp = ftp_mdtm($this->getStream(), $this_dir->name);
-            $this_dir->timestamp = (new DateTime())->setTimestamp($timestamp);
+            $this_dir->timestamp = (new DateTimeImmutable())->setTimestamp($timestamp);
             $this_dir->setFtp($this);
             $dirs[] = $this_dir;
         }

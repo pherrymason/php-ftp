@@ -9,7 +9,7 @@ abstract class FtpObject extends BaseObject {
 
     public $name;
     public $full_name;
-    public $timestamp;
+    public \DateTimeImmutable $timestamp;
     public $permission;
 
     public function __construct(Ftp $ftp, $name = NULL) {
