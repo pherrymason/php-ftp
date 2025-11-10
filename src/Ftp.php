@@ -3,6 +3,7 @@ namespace Rumd3x\Ftp;
 
 use StdClass;
 use Exception;
+use DateTimeImmutable;
 
 use Rumd3x\BaseObject\BaseObject;
 

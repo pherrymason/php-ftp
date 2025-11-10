@@ -2,6 +2,7 @@
 namespace Rumd3x\Ftp;
 
 use Rumd3x\BaseObject\BaseObject;
+use DateTimeImmutable;
 
 abstract class FtpObject extends BaseObject {
 
@@ -9,12 +10,12 @@ abstract class FtpObject extends BaseObject {
 
     public $name;
     public $full_name;
-    public \DateTimeImmutable $timestamp;
+    public DateTimeImmutable $timestamp;
     public $permission;
 
     public function __construct(Ftp $ftp, $name = NULL) {
         $this->setFtp($ftp);
-        $this->timestamp = new \DateTimeImmutable();
+        $this->timestamp = new DateTimeImmutable();
         if (!empty($name)) $this->name = $name;
         if (!empty($name)) $this->full_name = $this->ftp->currentFolder()."/".$name;
     }
